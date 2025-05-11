@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Loja Maçônica Acácia do Leste</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <style>
     :root {
       --cor-primaria: #1b3b5f;
@@ -11,7 +12,11 @@
       --cor-destaque: #ffd700;
       --cor-texto: #333;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--cor-secundaria);
@@ -24,16 +29,27 @@
       padding: 40px 20px;
       text-align: center;
     }
+    header img, .carousel-inner img {
+      max-width: 1000px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      object-fit: cover;
+    }
+
     nav {
       background-color: var(--cor-primaria);
       text-align: center;
       padding: 15px 0;
+      flex-wrap: wrap;
     }
     nav a {
       color: white;
-      margin: 0 15px;
+      margin: 0 10px;
       text-decoration: none;
       font-weight: bold;
+      display: inline-block;
+      padding: 8px 10px;
     }
     section {
       max-width: 1000px;
@@ -46,7 +62,7 @@
     }
     h2 {
       color: var(--cor-primaria);
-      margin-bottom: 20px;
+      margin-top: 20px;
     }
     h3{
       color: var(--cor-primaria);
@@ -57,6 +73,7 @@
       margin: 10px 0;
       border: 1px solid #ccc;
       border-radius: 4px;
+      font-size: 16px;
     }
     form button {
       background-color: var(--cor-primaria);
@@ -73,6 +90,32 @@
       text-align: center;
       padding: 30px 20px;
     }
+     @media (max-width: 768px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      header {
+        padding: 20px 10px;
+      }
+
+      section {
+        padding: 30px 15px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      form input, form textarea {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -88,7 +131,27 @@
   <header>
     <h1>Loja Maçônica Acácia do Leste nº 424</h1>
     <p>Grandes homens constroem grandes ideais</p>
-    <img src="./Imagens/Imagem topo.jpeg" alt="">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./Imagens/Imagem topo.jpeg" class="d-block w-100" alt="imagem 1">
+    </div>
+    <div class="carousel-item">
+      <img src="./Imagens/imagem 2.jpeg" class="d-block w-100" alt="imagem 2">
+    </div>
+    <div class="carousel-item">
+      <img src="./Imagens/imagem 3.jpeg" class="d-block w-100" alt="imagem 3">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
   </header>
   
   <section id="sobre">
@@ -112,13 +175,13 @@
     
     <h2>Quais são os seus princípios?</h2>
     <p>Os principais princípios da Maçonaria são:
-      <ul class="list-group">
-        <li class="list-group-item">Amor fraterno</li>
-        <li class="list-group-item">Tolerância</li>
-        <li class="list-group-item">Liberdade</li>
-        <li class="list-group-item">Igualdade</li>
-        <li class="list-group-item">Justiça</li>
-        <li class="list-group-item">Aperfeiçoamento contínuo do ser humano</li>
+      <ul>
+        <li>Amor fraterno</li>
+        <li>Tolerância</li>
+        <li>Liberdade</li>
+        <li>Igualdade</li>
+        <li>Justiça</li>
+        <li>Aperfeiçoamento contínuo do ser humano</li>
       </ul>
     </p>
     
@@ -145,61 +208,52 @@
     
     <h2>Quais as condições individuais indispensáveis para poder pertencer a Maçonaria?</h2>
     <p>As condições básicas incluem:
-      <ul class="list-group">
-        <li class="list-group-item">Ser homem livre e de bons costumes</li>
-        <li class="list-group-item">Ter boa reputação moral e social</li>
-        <li class="list-group-item">Crer em um Ser Supremo (o Grande Arquiteto do Universo)</li>
-        <li class="list-group-item">Ter idade mínima (geralmente 21 anos)</li>
-        <li class="list-group-item">Ser recomendado por maçons</li>
-        <li class="list-group-item">Estar disposto a trabalhar pelo aperfeiçoamento próprio e da sociedade</li>
+      <ul>
+        <li>Ser homem livre e de bons costumes</li>
+        <li>Ter boa reputação moral e social</li>
+        <li>Crer em um Ser Supremo (o Grande Arquiteto do Universo)</li>
+        <li>Ter idade mínima (geralmente 21 anos)</li>
+        <li>Estar disposto a trabalhar pelo aperfeiçoamento próprio e da sociedade</li>
       </ul>
     </p>
    
     <h2>O que se obtêm sendo Maçom?</h2>
     <p>Sendo maçom, obtém-se:
-      <ul class="list-group">
-        <li class="list-group-item">Desenvolvimento pessoal, moral e espiritual</li>
-        <li class="list-group-item">Participação em uma fraternidade de apoio mútuo</li>
-        <li class="list-group-item">Oportunidade de servir à sociedade por meio de ações filantrópicas</li>
-        <li class="list-group-item">Ter idade mínima (geralmente 21 anos)</li>
-        <li class="list-group-item">Crescimento intelectual por meio do estudo e da reflexão filosófica</li>
-        <li class="list-group-item">Laços de amizade baseados em princípios éticos</li>
+      <ul>
+        <li>Desenvolvimento pessoal, moral e espiritual</li>
+        <li>Participação em uma fraternidade de apoio mútuo</li>
+        <li>Oportunidade de servir à sociedade por meio de ações filantrópicas</li>
+        <li>Ter idade mínima (geralmente 21 anos)</li>
+        <li>Crescimento intelectual por meio do estudo e da reflexão filosófica</li>
+        <li>Laços de amizade baseados em princípios éticos</li>
       </ul>
     </p>
   </section>
 
   <section id="regular">
-    <h2>O QUE É UMA LOJA MAÇÔNICA REGULAR E RECONHECIDA</h2>
-    <h3>O QUE É UMA LOJA MAÇÔNICA?</h3>
+    <h2>O que é uma loja maçônica regular e reconhecida</h2>
+    <h3>O que é uma loja maçônica?</h3>
     <p>Uma Loja Maçônica é o local onde os maçons se reúnem para estudar, refletir e praticar os ensinamentos da Maçonaria.</p>
     <p>É nela que se desenvolvem trabalhos ritualísticos, filosóficos e ações filantrópicas.</p>
-    <h3>O QUE SIGNIFICA SER “REGULAR”?</h3>
+    <h3>O que significa ser “regular”?</h3>
     <p>Uma Loja Maçônica regular segue os princípios da Maçonaria Universal e está vinculada a uma Potência Maçônica legítima.</p>
-    <h3>CRITÉRIOS DE REGULARIDADE</h3>
+    <h3>Criterios de regularidade</h3>
     <p>Para ser reconhecida como regular, a Loja deve:
 
-      Crer em um Ser Supremo (Grande Arquiteto do Universo)
-      
-      Usar os “Três Grandes Luzes”: Bíblia, Esquadro e Compasso
-      
-      Evitar política partidária e religião nos trabalhos
-      
-      Praticar rituais aceitos pela Maçonaria regular mundial
-      
+      Crer em um Ser Supremo (Grande Arquiteto do Universo);
+      Usar os “Três Grandes Luzes”: Bíblia, Esquadro e Compasso;
+      Evitar política partidária e religião nos trabalhos;
+      Praticar rituais aceitos pela Maçonaria regular mundial;
       Ser autorizada por uma Potência reconhecida
-      
     </p>
-    <h3>POR QUE O RECONHECIMENTO É IMPORTANTE?</h3>
+    <h3>Por que o reconhecimento é importante?</h3>
     <p>O reconhecimento assegura que a Loja:
-
-        Siga as tradições maçônicas universais
-        
-        Permita a visitação entre maçons de diferentes países
-        
+        Siga as tradições maçônicas universais,
+        Permita a visitação entre maçons de diferentes países,
         Mantenha laços fraternos e legítimos com outras Lojas
     </p>
 
-    <h3>EM RESUMO:</h3>
+    <h3>Em resumo:</h3>
     <p>Uma Loja Maçônica regular e reconhecida no Brasil:
       ✔ É legalmente constituída
       ✔ Segue princípios morais e espirituais universais
@@ -208,7 +262,7 @@
 
   </section>
 
-  <section id="#macom">
+  <section id="macom">
     <h2>Maçom Regular</h2>
     <h3>Está vinculado a uma Loja regular</h3>
     <p>Ou seja, participa de uma Loja reconhecida oficialmente por uma Potência Maçônica legítima (como o Grande Oriente do Brasil, uma Grande Loja estadual ou um Grande Oriente Independente regular).</p>
@@ -258,5 +312,7 @@
   <footer>
     <p>&copy; 2025 Loja Maçônica Acácia do Leste nº 424. Todos os direitos reservados.</p>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
